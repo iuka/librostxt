@@ -1,0 +1,40 @@
+<div *ngFor="let uno of Images">
+    <div style="padding-top: 80px;">
+        <h2 class="display-5 font-weight-bold">
+            <mdb-badge color="cyan">{{uno.grd}}</mdb-badge>
+        </h2>
+    </div>
+    <swiper [config]="config" class="animated fadeIn">
+        <div class="swiper-wrapper">
+            <!--Card-->
+            <mdb-card cascade="true" narrower="true" class="swiper-slide animated fadeIn" *ngFor="let dos of uno.cont" (click)="dos.id_f_tipo  == 2 ? openModalinfo(dos,uno.id_f_grado): rutaredirect(dos)">
+                <!--Card image-->
+                <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+                    <mdb-card-img [src]="dos.imagen_pre | safe"></mdb-card-img>
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <!--/Card image-->
+                <mdb-card-body cascade="true" class="text-center">
+                    <!--Card content-->
+                    <h5 class="pink-text">
+                        {{dos.nombre | titulo}}</h5>
+                    <mdb-card-text>
+                        {{dos.descripcion | descripcion}}
+                    </mdb-card-text>
+                    <h5 class="blue-text">
+                        <mdb-icon fas icon="{{dos.icon}}" class="pr-2"></mdb-icon>{{dos.tipo}}
+                    </h5>
+                </mdb-card-body>
+                <!--/.Card content-->
+
+            </mdb-card>
+            <!--/.Card-->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </swiper>
+
+</div>

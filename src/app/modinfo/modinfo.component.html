@@ -1,0 +1,13 @@
+<div class="modal-header ">
+    <h4 class="modal-title w-100" id="myModalLabel">{{ content.nombre }}</h4>
+</div>
+<div class="modal-body">
+    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half ">
+        <iframe class="embed-responsive-item" [src]="'https://www.youtube.com/embed/'+content.url | safe " allowfullscreen></iframe>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" mdbBtn color="primary" class="waves-light" aria-label="Ver" (click)="modalRef.hide()" [routerLink]="'/material/'+grado+'/info/'+content.id" mdbWavesEffect>Ver más</button>
+    <button type="button" mdbBtn color="warning" class="waves-light" aria-label="Descarga" *ngIf="content.descarga" (click)="download(content.descarga)" mdbWavesEffect>Descarga</button>
+    <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="modalRef.hide()" mdbWavesEffect>Cerrar</button>
+</div>

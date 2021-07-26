@@ -1,0 +1,82 @@
+<mdb-card class="mt-5 text-center">
+    <mdb-card-body>
+        <button mdbBtn type="button" color="primary" rounded="true" outline="true" size="sm" mdbWavesEffect>Primary &nbsp; <mdb-icon fas icon="times"></mdb-icon> </button>
+        <button mdbBtn type="button" color="default" rounded="true" outline="true" size="sm" mdbWavesEffect>Default &nbsp; <mdb-icon fas icon="times"></mdb-icon></button>
+        <button mdbBtn type="button" color="secondary" rounded="true" outline="true" size="sm" mdbWavesEffect>Secondary &nbsp; <mdb-icon fas icon="times"></mdb-icon></button>
+        <button mdbBtn type="button" color="success" rounded="true" outline="true" size="sm" mdbWavesEffect>Success &nbsp; <mdb-icon fas icon="times"></mdb-icon></button>
+        <button mdbBtn type="button" color="info" rounded="true" outline="true" size="sm" mdbWavesEffect>Info &nbsp; <mdb-icon fas icon="times"></mdb-icon></button>
+        <button mdbBtn type="button" color="warning" rounded="true" outline="true" size="sm" mdbWavesEffect>Warning &nbsp; <mdb-icon fas icon="times"></mdb-icon></button>
+        <button mdbBtn type="button" color="danger" rounded="true" outline="true" size="sm" mdbWavesEffect>Danger &nbsp; <mdb-icon fas icon="times"></mdb-icon></button>
+    </mdb-card-body>
+</mdb-card>
+
+
+
+<div style="padding-top: 80px;">
+    <h2 class="display-5 font-weight-bold">
+        <mdb-badge color="cyan">Matematicas</mdb-badge>
+    </h2>
+</div>
+<swiper [config]="config">
+    <div class="swiper-wrapper">
+        <!--Card-->
+        <mdb-card cascade="true" narrower="true" class="swiper-slide animated fadeIn" *ngFor="let uno of Images" (click)="openModalinfo()">
+            <!--Card image-->
+            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+                <mdb-card-img [src]="uno.src" (click)="openModalinfo()"></mdb-card-img>
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+            <!--/Card image-->
+            <mdb-card-body cascade="true" class="text-center" (click)="openModalinfo()">
+                <!--Card content-->
+                <h5 class="pink-text">
+                    <mdb-icon fas icon="utensils"></mdb-icon>{{uno.alt}}</h5>
+                <mdb-card-text (click)="openModalinfo()">
+                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium.
+                </mdb-card-text>
+            </mdb-card-body>
+            <!--/.Card content-->
+
+        </mdb-card>
+        <!--/.Card-->
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</swiper>
+
+<div style="padding-top: 80px;">
+    <h2 class="display-5 font-weight-bold">
+        <mdb-badge color="cyan">geografia</mdb-badge>
+    </h2>
+</div>
+<swiper [config]="config">
+    <div class="swiper-wrapper">
+        <!--Card-->
+        <mdb-card cascade="true" narrower="true" class="swiper-slide animated fadeIn" *ngFor="let uno of Images" (click)="openModalinfo()">
+            <!--Card image-->
+            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+                <mdb-card-img [src]="uno.src"></mdb-card-img>
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+            <!--/Card image-->
+            <mdb-card-body cascade="true" class="text-center">
+                <!--Card content-->
+                <h5 class="pink-text">
+                    <mdb-icon fas icon="utensils"></mdb-icon>{{uno.alt}}</h5>
+                <mdb-card-text>
+                    Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium.
+                </mdb-card-text>
+            </mdb-card-body>
+            <!--/.Card content-->
+        </mdb-card>
+        <!--/.Card-->
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</swiper>

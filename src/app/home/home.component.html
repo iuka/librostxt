@@ -1,0 +1,75 @@
+<app-header></app-header>
+<mdb-card cascade="true" wider="true" reverse="true" class="animated fadeIn">
+    <!--Card image-->
+    <div class="view view-cascade overlay waves-light" mdbWavesEffect style=" height: 350px!important;">
+        <mdb-card-img class="h-25" src="https://librosdetexto.sep.gob.mx/img/uno.png"></mdb-card-img>
+        <a>
+            <div class="mask rgba-white-slight"></div>
+        </a>
+    </div>
+    <!--/Card image-->
+
+    <!-- Card content -->
+    <mdb-card-body cascade="true" class="text-center">
+
+        <!--Title-->
+        <mdb-card-title>
+            <h2>
+                <strong>Acervo de materiales educativos</strong>
+            </h2>
+        </mdb-card-title>
+
+        <mdb-card-text>
+            Aquí encontrarán en versión digital, los materiales educativos impresos elaborados por la Secretaría de Educación Pública para alumnos, maestros y padres de familia de educación preescolar, primaria y telesecundaria, con el propósito de cumplir con el
+            anhelo compartido de que en el país se ofrezca una educación con equidad y calidad, en la que todos los alumnos aprendan, sin importar su origen, su condición personal, económica o social, y en la que se promueva una formación centrada en
+            la dignidad humana, la solidaridad, el amor a la patria, el respeto y cuidado de la salud, así como la preservación del medio ambiente.</mdb-card-text>
+
+    </mdb-card-body>
+</mdb-card>
+
+<div class="container animated fadeIn">
+    <section class="text-center my-5">
+        <div class="tg-sectionhead">
+            <h2>
+                <mdb-icon fas icon="book"></mdb-icon><span> Libros</span> de Texto</h2>
+        </div>
+        <br><br><br>
+        <!-- Este carrusel hay que hacerlo dinamico -->
+        <app-libcar></app-libcar>
+    </section>
+    <p class="ml-5 ml-lg-0 mt-5"></p>
+    <!-- Section: Blog v.2 -->
+    <section class="text-center my-5">
+        <div class="tg-sectionhead">
+            <h2><span><mdb-icon fas icon="graduation-cap"></mdb-icon> Material</span> por grado</h2>
+        </div>
+        <!-- Grid row -->
+        <div class="row">
+            <!-- Grid column -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4" *ngFor="let tab of Grads">
+
+                <!-- Featured image -->
+                <div class="view overlay rounded z-depth-2 mb-4 waves-light" mdbWavesEffect>
+                    <img class="img-fluid" src="{{tab.img_horizontal}}" alt="{{tab.nombre_full}} Grado">
+                    <a [routerLink]="['/material',tab.id]">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!-- Category -->
+                <a [routerLink]="['/material',tab.id]" class="{{tab.colortext}}">
+                    <h6 class="font-weight-bold mb-3">
+                        <mdb-icon far icon="{{tab.icon}}" class="pr-2"></mdb-icon>{{tab.nombre_full}} Grado</h6>
+                </a>
+            </div>
+            <!-- Grid column -->
+
+
+        </div>
+
+    </section>
+    <!-- Section: Blog v.2 -->
+</div>
+
+
+<app-footer class="animated fadeIn"></app-footer>

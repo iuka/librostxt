@@ -1,0 +1,70 @@
+<div class="modal-dialog modal-full-height modal-right" role="document">
+    <!--Content-->
+    <div class="modal-content ">
+        <!--Header-->
+        <div class="modal-header text-center light-blue darken-3 white-text">
+            <h4 class="modal-title w-100" id="myModalLabel">Busqueda Especifica</h4>
+            <button type="button" class="close pull-right text-white-50" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">×</span>
+              </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body">
+            <form autocomplete="off" #forma='ngForm'>
+                <div class="md-form">
+                    <input mdbInput type="text" class="form-control" name='palabra' [ngModel]="filtro.palabra">
+                    <label for="form2">Palabra Clave</label>
+                </div>
+
+                <ul class="list-group z-depth-0">
+                    <li class="list-group-item justify-content-between">
+                        <!-- Subject -->
+                        <span>Asignatura</span>
+                        <div class="row">
+                            <div class="col-md-12 mx-auto">
+                                <mdb-select [options]="filtro.asignatura" name='asignatura' [ngModel]="selectedValue"></mdb-select>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item justify-content-between">
+                        <p>Bloque</p>
+                        <!-- Material inline 1 -->
+                        <mdb-checkbox [inline]="true" name='bloque1' [ngModel]="filtro.bloque1">1</mdb-checkbox>
+
+                        <!-- Material inline 2 -->
+                        <mdb-checkbox [inline]="true" name='bloque2' [ngModel]="filtro.bloque2">2</mdb-checkbox>
+
+                        <!-- Material inline 3 -->
+                        <mdb-checkbox [inline]="true" name='bloque3' [ngModel]="filtro.bloque3">3</mdb-checkbox>
+                    </li>
+                    <li class="list-group-item justify-content-between">
+                        <p>Tipo de Material</p>
+
+                        <!-- Material inline 1 -->
+                        <mdb-checkbox [inline]="true" name='libro' [ngModel]="filtro.libro">Libro</mdb-checkbox>
+
+                        <!-- Material inline 2 -->
+                        <mdb-checkbox [inline]="true" name='video' [ngModel]="filtro.video">Video</mdb-checkbox>
+
+                        <!-- Material inline 3 -->
+                        <mdb-checkbox [inline]="true" name='interactivo' [ngModel]="filtro.interactivo">Interactivo</mdb-checkbox>
+
+                        <!-- Material inline 4 -->
+                        <mdb-checkbox [inline]="true" name='audio' [ngModel]="filtro.audio">Audio</mdb-checkbox>
+
+                        <!-- Material inline 5 -->
+                        <mdb-checkbox [inline]="true" name='documento' [ngModel]="filtro.documento">Documento</mdb-checkbox>
+                    </li>
+                </ul>
+
+            </form>
+
+        </div>
+        <!--Footer-->
+        <div class="modal-footer justify-content-center">
+            <!--<button [routerLink]="['/material/1/buscar']" mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect type="submit">Buscar</button>-->
+            <button (click)="buscar(forma)" mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect type="submit">Buscar</button>
+        </div>
+    </div>
+    <!--/.Content-->
+</div>

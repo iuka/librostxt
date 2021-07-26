@@ -1,0 +1,26 @@
+<div class="row m-3">
+    <div class="col-md-6">
+        <div class="embed-container mt-5">
+            <iframe [src]="'https://www.youtube.com/embed/'+ informa.url | safe" frameborder="0" allowfullscreen height="450px" width="100%"></iframe>
+        </div>
+    </div>
+    <div class="col-md-6 mt-5">
+        <!-- Category -->
+        <a href="#!" class="pink-text">
+            <h6 class="font-weight-bold mb-3">
+                <mdb-icon fas icon="video" class="pr-2"></mdb-icon>{{informa.tipo}}</h6>
+        </a>
+        <h3 class="font-weight-bold mb-3"><strong>{{informa.nombre}}</strong></h3>
+        <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item"><strong>Nivel: </strong>{{informa.nivel}}</li>
+            <li class="list-group-item"><strong>Materia: </strong>{{informa.asignatura}}</li>
+            <li class="list-group-item"><strong>Grado: </strong>{{informa.grado}} Grado</li>
+            <li class="list-group-item"><strong>Bloque: </strong>{{informa.descripcion_b}}</li>
+            <li class="list-group-item"><strong>Descripción: </strong> <br>{{informa.descripcion}}</li>
+        </ul>
+
+        <!-- Read more button -->
+        <a mdbBtn color="pink" mdbWavesEffect class="mb-lg-0 mb-4" (click)="ver(informa.url)">Ver en Youtube</a>
+        <a mdbBtn color="yellow" mdbWavesEffect class="mb-lg-0 mb-4" *ngIf="informa.descarga" (click)="descarga(informa.descarga)">Descarga</a>
+    </div>
+</div>
