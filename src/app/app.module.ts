@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -69,7 +70,7 @@ import { InfoComponent } from './material/info/info.component';
     MdbWysiwygModule,
     NgxUsefulSwiperModule,
   ],
-  providers: [MDBSpinningPreloader],
+  providers: [MDBSpinningPreloader, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
   schemas:      [ NO_ERRORS_SCHEMA ]
 })
