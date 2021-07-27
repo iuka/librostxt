@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MaterialService {
-  //private url = 'http://tsiete.com.mx/librosdetexto/php-sql/';
-  private url = '13-LTG_php-sql/';
+  private url = 'http://tsiete.com.mx/librosdetexto/php-sql/';
+  //private url = '13-LTG_php-sql/';
   constructor( private http: HttpClient ) { }
 
   getMaterialGrados(){
