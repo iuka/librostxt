@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LibrosService {
-  //private url = 'http://tsiete.com.mx/librosdetexto/php-sql/';
-  private url = '13-LTG_php-sql/';
+  private url = 'http://tsiete.com.mx/librosdetexto/php-sql/';
+  //private url = '13-LTG_php-sql/';
   
   constructor( private http: HttpClient ) { }
 
